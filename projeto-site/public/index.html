@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <link rel="shortcut icon" href="img/icon.svg" type="svg" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="script/script.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+    <script src="script/validacao.js"></script>
+    <title>Led Zeppelin</title>
+</head>
+
+<body>
+    <a name="home"></a>
+    <div class="espacamento"></div>
+    <header id="header">
+        <div class="conteiner">
+            <div class="logo">
+                <h1>Led Zeppelin</h1>
+            </div>
+            <nav class="pages">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#game">starway to game</a></li>
+                    <li><a onclick="verPlaylist()">Mothership</a></li>
+                    <li id="barra">|</li>
+                    <li id="cadastro"><span class="cadastro" onclick="modal()">Cadastro</span></li>
+                    <li id="login"><span class="cadastro" id="click" onclick="inputLogin()">Login</span></li>
+                </ul>
+            </nav>
+            <div class="boxLogin" id="boxLogin">
+                <div class="login">
+                    <!-- <form>
+                        <h3>Usuário</h3>
+                        <input type="email" id="email">
+                        <h3>Senha</h3>
+                        <input type="password" id="senha">
+                        <span id="invalid"><h5>Usuário não cadastrado</h5></span>
+                        <button onclick="user()" type="button"><h3>Entrar</h3></button> -->
+                    <form id="form_login" method="post" onsubmit="return entrar()">
+                        <h3>Usuário</h3>
+                        <input id="l_login" type="text" name="login" id="email">
+                        <h3>Senha</h3>
+                        <input id="l_senha" type="password" name="senha" id="senha">
+                        <span id="invalid"><h5>Usuário não encontrado</h5></span>
+                        <button id="btn_entrar"><h3>Entrar</h3></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="boxUser" id="boxUser">
+            <div class="login">
+                <span><h3 id="exit">Sair</h3></span>
+            </div>
+        </div>
+        </div>
+    </header>
+    <section>
+        <div class="integrantes">
+            <img class="banda" src="img/integrantes.jpg" alt="Integrantes Led Zeppelin">
+            <img onclick="johnB()" id="johnBonham" src="img/johnB.png" alt="John Bonham">
+            <img onclick="robert()" id="robertP" src="img/robert.png" alt="Robert Plant">
+            <img onclick="jimmy()" id="jimmyP" src="img/jimmy.png" alt="Jimmy Page">
+            <img onclick="johnP()" id="johnPaul" src="img/johnP.png" alt="John Paul Jones">
+        </div>
+    </section>
+    <section>
+        <div class="center">
+            <div class="conteiner">
+                <div class="zeppelin">
+                    <img class="faixa" src="img/faixa-header.png" alt="">
+                    <img class="dirigivel" src="img/zeppelin.png" alt="Zeppelin">
+                    <div class="apresentacao">
+                        <a name="descricao"></a>
+                        <h1 id="nomes"></h1>
+                        <div class="desc">
+                            <h3 id="avisoIntegrantes">
+                                Clique na foto de cada integrante para saber mais sobre ele
+                            </h3>
+                            <h3 id="JohnB" style="display: none;">John Henry Bonham nasceu em 31 de maio de 1948 em Redditch, Worcestershire, Inglaterra. Quando era muito pequeno costumava a batucar em caixotes e latas de café quando tinha apenas 5 anos, imitando os movimentos dos seus ídolos
+                                Gene Krupa e Buddy Rich (Vale lembrar que Bonham era um baterista autodidata). Aos quinze anos recebeu a sua primeira bateria a sério: uma Premier. Quando ele deixou a escola, para ajudar seu pai em uma empresa de construção.
+                                Seus pais sempre o apoiaram, outra pessoa que apoiou suas ambiçoes foi sua mulher, com quem ele tinha se casado com apenas 17 anos.
+                            </h3>
+                            <h3 id="Robert" style="display: none;">Robert Anthony Plant nasceu em 20 de Agosto de 1948, em West Bromwich, Staffordshire, Inglaterra. Influenciado principalmente por Elvis Presley, Robert Plant desenvolveu uma grande paixão pelo Blues. Robert começou a cantar
+                                profissionalmente em pubs e clubes com apenas 16 anos de idade, participando de diversas bandas. Plant foi cantar em uma banda chamada The Band of Joy – onde se reencontrou com John Bonham, que já conhecia desde os tempos
+                                em que tocaram juntos no Crawling King Snakes. Band of Joy chegou a gravar pela Decca no final de 1967, mas sem sucesso algum, embora a banda tivesse prestígio.
+                            </h3>
+                            <h3 id="Jimmy" style="display: none;">Jimmy Page nasceu em 9 de janeiro de 1944, no subúrbio de Heston, em Middlesex, Londres, que hoje faz parte do Borough londrino de Hounslow. Em 1952 se mudou para Feltham, e depois novamente para Miles Road, Epsom, em Surrey,
+                                que foi onde Page se deparou com sua primeira guitarra. "Eu não sei se a guitarra foi deixada para trás pelos donos da casa antes de nós, ou se era um amigo do casal. Ninguém parecia saber por que ele estava lá". Page começou
+                                a tocar o instrumento com 12 anos, ele tomou algumas aulas nas proximidades de Kingston, mas em grande parte ele aprendeu tudo sozinho.
+                            </h3>
+                            <h3 id="JohnP" style="display: none;">John Baldwin nasceu em Sidcup, Kent, em 3 de janeiro de 1946. John aprendeu a tocar teclados com o seu pai, Joe Baldwin, que foi pianista em grandes orquestras nas décadas de 40 e 50, principalmente com a Ambrose Orchestra.
+                                Sua mãe também pertencia ao mundo da música, o que permitia que a família muitas vezes fizesse digressões pela Inglaterra como um ato de comédia vaudeville. A suas influências abrangiam um grande leque de estilos, desde
+                                os Blues de Big Bill Broonzy, ao Jazz de Charles Mingus e ao piano clássico de Rachmaninov. Aos 14 anos era organista e condutor do coro da igreja local e foi nessa altura que comprou as suas primeiras guitarras baixo.
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a name="game"></a>
+    <section>
+        <img class="miniGame" src="img/background02.png" alt="">
+        <div class="conteiner">
+            <div class="game">
+                <div class="titulo">
+                    <h1>Mini Game</h1>
+                </div>
+                <img class="starway" src="img/starway.png" alt="">
+                <div class="infoGame">
+                    <h1>Ajude o Anjo no caminho para o céu</h1>
+                    <img onclick="angelAnimate()" id="btnGame" src="img/start-button.png">
+                    <h1 id="cliques" style="display: none;">0</h1>
+                </div>
+                <img id="angel" src="img/angel.png" alt="">
+                <div id="aviso">
+                    <div id="acabou">
+                        <h2>O jogo acabou mas você pode continuar clicando abaixo</h2>
+                        <button onclick="deNovo()" id="retry">Jogar de novo</buntton>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a name="album"></a>
+    <section>
+        <div class="alinhar">
+            <div id="button" onmousemove="opacidadePlaylist1()" onmouseout="opacidadePlaylist0()" onclick="verPlaylist()">
+                <svg id="arrow" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve" width="512px" height="512px"><g><g>
+                    <g>
+                        <polygon points="128,48.907 0,176.907 30.187,207.093 128,109.28 225.813,207.093 256,176.907   " data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF"/>
+                    </g>
+                </g></g> </svg>
+            </div>
+        </div>
+        <div id="spotify">
+            <iframe id="playlist" onmousemove="opacidadePlaylist1()" onmouseout="opacidadePlaylist0()" src="https://open.spotify.com/embed/album/4wExFfncaUIqSgoxnqa3Eh" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+    </section>
+            <div id="mostrar">
+                <h1 id="btnClose" onclick="modal()">X</h1>
+                <div id="modalCadastro" class="modalC">
+                        <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                            <h3>Email</h3>
+                            <input id="c_email" type="text" name="nome">
+                            <h3>Usuário</h3>
+                            <input id="c_login" type="text" name="login">
+                            <h3>Senha</h3>
+                            <input id="c_senha" type="password" name="senha">
+                            <br>
+                            <button id="btn_entrar" onclick="validar()"><h3>Cadastrar-se</h3></button>
+                        </form>
+                    </div>
+                </div>
+                <div id="div_aviso">
+                    <h5 id="ver"></h5>
+                </div>
+            </div>
+</body>
+
+</html>
+<script>
+    function preencher() {
+        l_login.value = c_login.value;
+        l_senha.value = c_senha.value;
+    }
+
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.usuario;
+                    sessionStorage.nome_usuario_meuapp = json.usuario;
+
+                    window.location.href = 'indexLogado.html';
+                });
+
+            } else {
+
+                invalid.style.opacity = '1';
+
+                console.log('Erro de login!');
+
+                response.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+</script>
